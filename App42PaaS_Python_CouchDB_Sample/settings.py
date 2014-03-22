@@ -17,7 +17,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'b0e2nby0@$$59b(me4!zyl^*(s_$a!%!vymna6i%1kbb@x^f#t'
+SECRET_KEY = 'bqk&k@#zq$6sit(0f1-=vasb+t#77-u9$aoi*b!g-0aok3hv4+'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -42,7 +42,7 @@ INSTALLED_APPS = (
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+#    'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -56,19 +56,9 @@ WSGI_APPLICATION = 'App42PaaS_Python_CouchDB_Sample.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
 
+COUCHDB_SERVER = 'http://ask50kt6ahiiki0x:a0dgism7z7e36v6jzxw499cosakgr2xa@54.208.130.57:20438'
+COUCHDB_DATABASE = 'maple'
 
-COUCHDB_DATABASES = {
-    'default': {
-        #'ENGINE': 'django_mongodb_engine',
-        #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-		'ENGINE': 'couchdbkit.ext.django', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'sample',                      # Or path to database file if using sqlite3.
-        'USER': 'allnau5ed7nnkj01',                      # Not used with sqlite3.
-        'PASSWORD': 'a1lzfukva9kmh8l9y5zcdxiuugoikt4j',                  # Not used with sqlite3.
-        'HOST': '54.208.130.57',                      # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '61792',                      # Set to empty string for default. Not used with sqlite3.
-    }
-}
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
