@@ -17,19 +17,19 @@ def index(request):
 	
 
 def detail(request):
-    docs = SERVER[getattr(settings,'COUCHDB_DATABASE')]
+    user = SERVER[getattr(settings,'COUCHDB_DATABASE')]
     if request.method == "POST":
         name = request.POST['name'].replace(' ','')
         description = request.POST['description'].replace(' ','')
         email = request.POST['email'].replace(' ','')
-        docs[name] = {'name':name,'email':email,'description':description}
+        user[name] = {'name':name,'email':email,'description':description}
         return HttpResponseRedirect(u"/show/")
 
 def show(request):
-    docs = SERVER[getattr(settings,'COUCHDB_DATABASE')]
+    user = SERVER[getattr(settings,'COUCHDB_DATABASE')]
     lists = []
-    for row in docs:
-        data = docs[row]
+    for row in user:
+        data = user[row]
         lists.append(data)			
     return render_to_response('sample/detail.html',{'lists':lists,'data':data})
 
