@@ -57,7 +57,7 @@ WSGI_APPLICATION = 'App42PaaS_Python_CouchDB_Sample.wsgi.application'
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
 
 COUCHDB_SERVER = 'http://ask50kt6ahiiki0x:a0dgism7z7e36v6jzxw499cosakgr2xa@54.208.130.57:20438'
-COUCHDB_DATABASE = 'maple'
+COUCHDB_DATABASE = 'sample'
 
 
 # Internationalization
